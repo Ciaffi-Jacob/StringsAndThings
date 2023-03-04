@@ -1,6 +1,8 @@
 package io.zipcoder;
 
 
+import com.google.inject.internal.util.Strings;
+
 /**
  * @author tariq
  */
@@ -15,6 +17,14 @@ public class StringsAndThings {
      *           countYZ("day fyyyz"); // Should return 2
      */
     public Integer countYZ(String input){
+        int sum = 0;
+
+        String[] word = input.split(" ");
+        if (int i = 0;
+        boolean b = i < word.length;
+        i++){
+            word.endsWith();
+        }
         return null;
     }
 
