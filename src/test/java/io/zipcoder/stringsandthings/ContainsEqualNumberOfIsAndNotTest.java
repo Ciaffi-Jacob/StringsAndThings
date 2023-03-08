@@ -3,7 +3,7 @@ package io.zipcoder.stringsandthings;
 import io.zipcoder.StringsAndThings;
 import org.junit.Assert;
 import org.junit.Before;
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
 
 /**

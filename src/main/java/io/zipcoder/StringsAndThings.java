@@ -2,6 +2,11 @@ package io.zipcoder;
 
 
 import com.google.inject.internal.util.Strings;
+import org.codehaus.plexus.util.StringUtils;
+
+import java.util.Locale;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  * @author tariq
@@ -16,21 +21,21 @@ public class StringsAndThings {
      *           countYZ("day fez"); // Should return 2
      *           countYZ("day fyyyz"); // Should return 2
      */
-    public Integer countYZ(String input){
-        int sum = 0;
+    public Integer countYZ(String input) {
+        String[] array = input.split(" ");
+        int count = 0;
+        for (int i = 0; i < array.length; i++) {
+            if (array[i].toLowerCase(Locale.ROOT).endsWith("y") || array[i].toLowerCase(Locale.ROOT).endsWith("z")) {
+                count++;
+            }
 
-        String[] word = input.split(" ");
-        if (int i = 0;
-        boolean b = i < word.length;
-        i++){
-            word.endsWith();
         }
-        return null;
+        return  count;
     }
 
     /**
      * Given two strings, base and remove, return a version of the base string where all instances of the remove string have
-     * been removed (not case sensitive). You may assume that the remove string is length 1 or more.
+     * been removed (not case-sensitive). You may assume that the remove string is length 1 or more.
      * Remove only non-overlapping instances, so with "xxx" removing "xx" leaves "x".
      *
      * example : removeString("Hello there", "llo") // Should return "He there"
@@ -38,7 +43,9 @@ public class StringsAndThings {
      *           removeString("Hello there", "x") // Should return "Hello there"
      */
     public String removeString(String base, String remove){
-        return null;
+
+       String changedBase = base.replace(remove, "");
+        return  changedBase;
     }
 
     /**
@@ -50,9 +57,8 @@ public class StringsAndThings {
      *           containsEqualNumberOfIsAndNot("noisxxnotyynotxisi") // Should return true
      */
     public Boolean containsEqualNumberOfIsAndNot(String input){
-        return null;
+        return input.split("is", -1).length == input.split("not", -1).length;
     }
-
     /**
      * We'll say that a lowercase 'g' in a string is "happy" if there is another 'g' immediately to its left or right.
      * Return true if all the g's in the given string are happy.
@@ -61,7 +67,13 @@ public class StringsAndThings {
      *           gHappy("xxggyygxx") // Should return  false
      */
     public Boolean gIsHappy(String input){
-        return null;
+        String Gee = input;
+        for (int i = 0; i < Gee.length(); i++){
+            if (Gee.charAt(i) == 'g' && Gee.charAt(i + 1) == 'g'){
+                return  true;
+            }
+        }
+        return false;
     }
 
 
@@ -73,6 +85,11 @@ public class StringsAndThings {
      *            countTriple("a") // Should return 0
      */
     public Integer countTriple(String input){
-        return null;
+        int count = 0;
+        for (int i = 0; i < input.length() -3; i++){
+            if (input.charAt(i) == input.charAt(i + 1) && input.charAt(i) == input.charAt(i + 2))
+                count ++;
+        }
+        return count;
     }
 }
